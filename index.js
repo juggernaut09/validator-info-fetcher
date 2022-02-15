@@ -2,9 +2,8 @@ const express = require("express");
 const axios = require("axios");
 const Redis = require("ioredis");
 const cron = require("node-cron");
-const dotenv = require("dotenv");
+const config = require("config");
 
-dotenv.config();
 const app = express();
 const redis = new Redis();
 
@@ -32,10 +31,10 @@ app.get("/validator/:chain", (req, res) => {
   }
 });
 
-cron.schedule("*/30 * * * *", async () => {
+cron.schedule("* */30 * * * *", async () => {
   console.log("Fetching RPC data at 30 minute-interval");
   try {
-    const ChainData = JSON.parse(process.env.ChainData);
+    const ChainData = config.get("ChainData");
     for (const key in ChainData) {
       const response = await axios.get(`${ChainData[key]}`);
       if (response != undefined) {
@@ -49,6 +48,7 @@ cron.schedule("*/30 * * * *", async () => {
   }
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`validator-info-fetcher listening on port ${process.env.PORT}`);
+const port = config.get("PORT");
+app.listen(port, () => {
+  console.log(`validator-info-fetcher listening on port ${port}`);
 });
