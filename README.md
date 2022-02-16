@@ -18,9 +18,17 @@ redis-server
 
 ## Run Node server
 
+Export APP_ENV 
+```
+export APP_ENV=dev 
+or 
+export APP_ENV=prod
+```
+
+
+Start the process
 ```
 nodemon 
-
 or 
 
 npm run start 

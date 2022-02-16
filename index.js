@@ -3,11 +3,14 @@ const axios = require("axios");
 const Redis = require("ioredis");
 const cron = require("node-cron");
 const config = require("config");
-
+var cors = require('cors')
 const app = express();
 const redis = new Redis();
 
 
+
+
+// logs 
 function log(...args) {
   console.log(`INFO: ${new Date()} > ${args.join(" ")}`)
 }
@@ -16,12 +19,31 @@ function logError(...args) {
   console.log(`Err : ${new Date()} > ${args.join(" ")}`)
 }
 
+// adding cors to express 
+var allowlist = ['https://*.vitwit.com']
 
-app.get("/", (req, res) => {
+const corsOptions = {
+  methods: ['GET'],
+  origin: (origin, callback) => {
+    if (process.env.APP_ENV = "dev") {
+      callback(null, true)
+    } else {
+      if (allowlist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback('CORS-enabled')
+      }
+    }
+  }
+}
+
+app.use(cors(corsOptions))
+
+app.get("/", (req, res, next) => {
   res.send("Hello From witval validator (https://staking.vitwit.com)");
 });
 
-app.get("/validator/:chain", (req, res) => {
+app.get("/validator/:chain", (req, res, next) => {
   try {
     const chain = req.params.chain;
     if (chain == undefined) {
