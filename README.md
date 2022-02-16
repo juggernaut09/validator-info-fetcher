@@ -1,10 +1,10 @@
-# validator-info-fetcher
+# validator-info-fetcher for WITVAL 
 
 ```
 An expressJS server used to fetch validator details from LCD and store it in Redis.
 ```
 
-## Install dependencies from package-lock.json
+## Install dependencies
 
 ```
 $ npm install
@@ -19,5 +19,9 @@ redis-server
 ## Run Node server
 
 ```
-nodemon
+nodemon 
+
+or 
+
+npm run start 
 ```

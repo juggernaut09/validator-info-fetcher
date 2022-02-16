@@ -1,18 +1,71 @@
 {
-  "PORT": 3000,
-  "ChainData": {
-    "akash": "http://135.181.181.122:1518/cosmos/staking/v1beta1/validators/akashvaloper1qwlcuf2c2dhtgy8z5y7xxqev96km0n5mw30ls2",
-    "cosmos": "https://lcd-cosmoshub.blockapsis.com/cosmos/staking/v1beta1/validators/cosmosvaloper1ddle9tczl87gsvmeva3c48nenyng4n56nghmjk",
-    "sentinel": "https://lcd.sentinel.co/cosmos/staking/v1beta1/validators/sentvaloper1qz2ytxg4pjna69dskzlg7kn2ge87rxryy8yntd",
-    "regen": "http://public-rpc.regen.vitwit.com:1317/cosmos/staking/v1beta1/validators/regenvaloper1h5z08rzvrwt3pzdjc03upvuh2x0j3yskldyqvj",
-    "persistence": "https://rest.core.persistence.one/cosmos/staking/v1beta1/validators/persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq",
-    "osmosis": "https://lcd-osmosis.blockapsis.com/cosmos/staking/v1beta1/validators/osmovaloper1ddle9tczl87gsvmeva3c48nenyng4n56yscals",
-    "desmos": "https://api.mainnet.desmos.network/cosmos/staking/v1beta1/validators/desmosvaloper1c4gwu6vv0xasf2dysgag90wymw6s327lxz5wqe",
-    "ixo": "https://rest.core.persistence.one/cosmos/staking/v1beta1/validators/persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq",
-    "juno": "https://lcd-juno.itastakers.com/cosmos/staking/v1beta1/validators/junovaloper16msryt3fqlxtvsy8u5ay7wv2p8mglfg9g70e3q",
-    "stargaze": "https://rest.stargaze-apis.com/cosmos/staking/v1beta1/validators/starsvaloper12rfj3mvdfeh38p3ztmuhamgm4yxwq8a5pz8vvn",
-    "emoney": "https://lcd-emoney.keplr.app/cosmos/staking/v1beta1/validators/emoneyvaloper10nc3y5xp93txarcxcqdrsvh9ta297v7x3zkp6f",
-    "comdex": "https://api.comdex.audit.one/rest/cosmos/staking/v1beta1/validators/comdexvaloper10j3t6jxqjjnz4lkh3m2af7yxcf9773r4a8z8z3",
-    "agoric": "https://main.api.agoric.net/cosmos/staking/v1beta1/validators/agoricvaloper1ev9nl6pl5trgvrc7chntj937m42aznn28crcs8"
+  "cronExpression": "*/30 * * * *",
+  "port": 3001,
+  "chainData": {
+    "akash": {
+      "rpc": "",
+      "lcd": "http://135.181.181.122:1518",
+      "valoper": "akashvaloper1qwlcuf2c2dhtgy8z5y7xxqev96km0n5mw30ls2"
+    },
+    "cosmos-hub": {
+      "rpc": "",
+      "lcd": "https://lcd-cosmoshub.blockapsis.com",
+      "valoper": "cosmosvaloper1ddle9tczl87gsvmeva3c48nenyng4n56nghmjk"
+    },
+    "sentinel": {
+      "rpc": "",
+      "lcd": "https://lcd.sentinel.co",
+      "valoper": "sentvaloper1qz2ytxg4pjna69dskzlg7kn2ge87rxryy8yntd"
+    },
+    "regen": {
+      "rpc": "",
+      "lcd": "http://public-rpc.regen.vitwit.com:1317",
+      "valoper": "regenvaloper1h5z08rzvrwt3pzdjc03upvuh2x0j3yskldyqvj"
+    },
+    "persistence": {
+      "rpc": "",
+      "lcd": "https://rest.core.persistence.one",
+      "valoper": "persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq"
+    },
+    "osmosis": {
+      "rpc": "",
+      "lcd": "https://lcd-osmosis.blockapsis.com",
+      "valoper": "osmovaloper1ddle9tczl87gsvmeva3c48nenyng4n56yscals"
+    },
+    "desmos": {
+      "rpc": "",
+      "lcd": "https://api.mainnet.desmos.network",
+      "valoper": "desmosvaloper1c4gwu6vv0xasf2dysgag90wymw6s327lxz5wqe"
+    },
+    "ixo": {
+      "rpc": "",
+      "lcd": "https://rest.core.persistence.one",
+      "valoper": "persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq"
+    },
+    "juno": {
+      "rpc": "",
+      "lcd": "https://lcd-juno.itastakers.com",
+      "valoper": "junovaloper16msryt3fqlxtvsy8u5ay7wv2p8mglfg9g70e3q"
+    },
+    "stargaze": {
+      "rpc": "",
+      "lcd": "https://rest.stargaze-apis.com",
+      "valoper": "starsvaloper12rfj3mvdfeh38p3ztmuhamgm4yxwq8a5pz8vvn"
+    },
+    "emoney": {
+      "rpc": "",
+      "lcd": "https://lcd-emoney.keplr.app",
+      "valoper": "emoneyvaloper10nc3y5xp93txarcxcqdrsvh9ta297v7x3zkp6f"
+    },
+    "comdex": {
+      "rpc": "",
+      "lcd": "https://api.comdex.audit.one/rest",
+      "valoper": "comdexvaloper10j3t6jxqjjnz4lkh3m2af7yxcf9773r4a8z8z3"
+    },
+    "agoric": {
+      "rpc": "",
+      "lcd": "https://main.api.agoric.net",
+      "valoper": "agoricvaloper1ev9nl6pl5trgvrc7chntj937m42aznn28crcs8"
+    }
   }
 }
