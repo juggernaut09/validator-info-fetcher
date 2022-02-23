@@ -5,13 +5,14 @@ const cron = require("node-cron");
 const config = require("config");
 var cors = require('cors')
 var morgan = require('morgan')
+var https = require("https")
 
 
 const app = express();
 const redis = new Redis();
 
 // Set the application enviorment 
-if(process.env.APP_ENV == null || process.env.APP_ENV == undefined){
+if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
   process.env.APP_ENV = "dev"
 }
 
@@ -87,8 +88,16 @@ function fetchValidatorInfomation() {
         let { lcd, valoper, additionalInfo } = chainData[key]
         let validatorUrl = `${lcd}/cosmos/staking/v1beta1/validators/${valoper}`
         let stakingParamUrl = `${lcd}/cosmos/staking/v1beta1/params`
-        const validatorResponse = await axios.get(validatorUrl);
-        const stakingParams = await axios.get(stakingParamUrl)
+        const validatorResponse = await axios.get(validatorUrl, {
+          httpsAgent: new https.Agent({
+            rejectUnauthorized: false
+          })
+        });
+        const stakingParams = await axios.get(stakingParamUrl, {
+          httpsAgent: new https.Agent({
+            rejectUnauthorized: false
+          })
+        })
 
         if (validatorResponse.status == 200 && stakingParams.status == 200) {
           let validatorInformation = {
