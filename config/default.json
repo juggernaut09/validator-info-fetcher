@@ -5,67 +5,158 @@
     "akash": {
       "rpc": "",
       "lcd": "http://135.181.181.122:1518",
-      "valoper": "akashvaloper1qwlcuf2c2dhtgy8z5y7xxqev96km0n5mw30ls2"
+      "valoper": "akashvaloper1qwlcuf2c2dhtgy8z5y7xxqev96km0n5mw30ls2",
+      "currency": {
+        "coinDenom": "AKT",
+        "coinMinimalDenom": "uakt",
+        "coinDecimals": 6,
+        "coinGeckoId": "akash-network"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/akashnet/stake?modal=stake&validator=akashvaloper1qwlcuf2c2dhtgy8z5y7xxqev96km0n5mw30ls2"
     },
     "cosmos-hub": {
       "rpc": "",
       "lcd": "https://lcd-cosmoshub.blockapsis.com",
-      "valoper": "cosmosvaloper1ddle9tczl87gsvmeva3c48nenyng4n56nghmjk"
+      "valoper": "cosmosvaloper1ddle9tczl87gsvmeva3c48nenyng4n56nghmjk",
+      "currency": {
+        "coinDenom": "ATOM",
+        "coinMinimalDenom": "uatom",
+        "coinDecimals": 6,
+        "coinGeckoId": "cosmos"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/cosmoshub/stake?modal=stake&validator=cosmosvaloper1ddle9tczl87gsvmeva3c48nenyng4n56nghmjk"
     },
     "sentinel": {
       "rpc": "",
       "lcd": "https://lcd.sentinel.co",
-      "valoper": "sentvaloper1qz2ytxg4pjna69dskzlg7kn2ge87rxryy8yntd"
+      "valoper": "sentvaloper1hzxq7rtjv9f92gdmv6n220jrytfj9ghkd8mvyx",
+      "currency": {
+        "coinDenom": "DVPN",
+        "coinMinimalDenom": "udvpn",
+        "coinDecimals": 6,
+        "coinGeckoId": "sentinel"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/sentinel/stake?modal=stake&validator=sentvaloper1hzxq7rtjv9f92gdmv6n220jrytfj9ghkd8mvyx"
     },
     "regen": {
       "rpc": "",
       "lcd": "http://public-rpc.regen.vitwit.com:1317",
-      "valoper": "regenvaloper1h5z08rzvrwt3pzdjc03upvuh2x0j3yskldyqvj"
+      "valoper": "regenvaloper1h5z08rzvrwt3pzdjc03upvuh2x0j3yskldyqvj",
+      "currency": {
+        "coinDenom": "REGEN",
+        "coinMinimalDenom": "uregen",
+        "coinDecimals": 6,
+        "coinGeckoId": "regen"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/regen/stake?modal=stake&validator=regenvaloper1h5z08rzvrwt3pzdjc03upvuh2x0j3yskldyqvj"
     },
     "persistence": {
       "rpc": "",
       "lcd": "https://rest.core.persistence.one",
-      "valoper": "persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq"
+      "valoper": "persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq",
+      "currency": {
+        "coinDenom": "XPRT",
+        "coinMinimalDenom": "uxprt",
+        "coinDecimals": 6,
+        "coinGeckoId": "persistence"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/core/stake?modal=stake&validator=persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq"
     },
     "osmosis": {
       "rpc": "",
       "lcd": "https://lcd-osmosis.blockapsis.com",
-      "valoper": "osmovaloper1ddle9tczl87gsvmeva3c48nenyng4n56yscals"
+      "valoper": "osmovaloper1ddle9tczl87gsvmeva3c48nenyng4n56yscals",
+      "currency": {
+        "coinDenom": "OSMO",
+        "coinMinimalDenom": "uosmo",
+        "coinDecimals": 6,
+        "coinGeckoId": "osmosis"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/osmosis/stake?modal=stake&validator=osmovaloper1ddle9tczl87gsvmeva3c48nenyng4n56yscals"
     },
     "desmos": {
       "rpc": "",
       "lcd": "https://api.mainnet.desmos.network",
-      "valoper": "desmosvaloper1c4gwu6vv0xasf2dysgag90wymw6s327lxz5wqe"
+      "valoper": "desmosvaloper1c4gwu6vv0xasf2dysgag90wymw6s327lxz5wqe",
+      "currency": {
+        "coinDenom": "DSM",
+        "coinMinimalDenom": "udsm",
+        "coinDecimals": 6,
+        "coinGeckoId": "desmos"
+      },
+      "stakingUrl": "https://x.forbole.com/"
     },
     "ixo": {
       "rpc": "",
-      "lcd": "https://rest.core.persistence.one",
-      "valoper": "persistencevaloper1z5khe9nnd4s8w4cq5ph0rsg3xhhks356ca5jeq"
+      "lcd": "https://lcd-impacthub.keplr.app",
+      "valoper": "ixovaloper1qvppl3479hw4clahe0kwdlfvf8uvjtcd0ytmqc",
+      "currency": {
+        "coinDenom": "IXO",
+        "coinMinimalDenom": "uixo",
+        "coinDecimals": 6,
+        "coinGeckoId": "ixo"
+      },
+      "stakingUrl": ""
     },
     "juno": {
       "rpc": "",
       "lcd": "https://lcd-juno.itastakers.com",
-      "valoper": "junovaloper16msryt3fqlxtvsy8u5ay7wv2p8mglfg9g70e3q"
+      "valoper": "junovaloper16msryt3fqlxtvsy8u5ay7wv2p8mglfg9g70e3q",
+      "currency": {
+        "coinDenom": "JUNO",
+        "coinMinimalDenom": "ujuno",
+        "coinDecimals": 6,
+        "coinGeckoId": "juno-network"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/juno/stake?modal=stake&validator=junovaloper16msryt3fqlxtvsy8u5ay7wv2p8mglfg9g70e3q"
     },
     "stargaze": {
       "rpc": "",
       "lcd": "https://rest.stargaze-apis.com",
-      "valoper": "starsvaloper12rfj3mvdfeh38p3ztmuhamgm4yxwq8a5pz8vvn"
+      "valoper": "starsvaloper12rfj3mvdfeh38p3ztmuhamgm4yxwq8a5pz8vvn",
+      "currency": {
+        "coinDenom": "STARS",
+        "coinMinimalDenom": "ustars",
+        "coinDecimals": 6,
+        "coinGeckoId": "stargaze"
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/stargaze/stake?modal=stake&validator=starsvaloper12rfj3mvdfeh38p3ztmuhamgm4yxwq8a5pz8vvn"
     },
     "emoney": {
       "rpc": "",
       "lcd": "https://lcd-emoney.keplr.app",
-      "valoper": "emoneyvaloper10nc3y5xp93txarcxcqdrsvh9ta297v7x3zkp6f"
+      "valoper": "emoneyvaloper10nc3y5xp93txarcxcqdrsvh9ta297v7x3zkp6f",
+      "currency": {
+        "coinDenom": "NGM",
+        "coinMinimalDenom": "ungm",
+        "coinDecimals": 6,
+        "coinGeckoId": ""
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/emoney/stake?modal=stake&validator=emoneyvaloper10nc3y5xp93txarcxcqdrsvh9ta297v7x3zkp6f"
     },
     "comdex": {
       "rpc": "",
       "lcd": "https://api.comdex.audit.one/rest",
-      "valoper": "comdexvaloper10j3t6jxqjjnz4lkh3m2af7yxcf9773r4a8z8z3"
+      "valoper": "comdexvaloper10j3t6jxqjjnz4lkh3m2af7yxcf9773r4a8z8z3",
+      "currency": {
+        "coinDenom": "CMDX",
+        "coinMinimalDenom": "ucmdx",
+        "coinDecimals": 6,
+        "coinGeckoId": "comdex"
+      },
+      "stakingUrl": "https://comdex.omniflix.co"
     },
     "agoric": {
       "rpc": "",
       "lcd": "https://main.api.agoric.net",
-      "valoper": "agoricvaloper1ev9nl6pl5trgvrc7chntj937m42aznn28crcs8"
+      "valoper": "agoricvaloper1ev9nl6pl5trgvrc7chntj937m42aznn28crcs8",
+      "currency": {
+        "coinDenom": "BLD",
+        "coinMinimalDenom": "ubld",
+        "coinDecimals": 6,
+        "coinGeckoId": ""
+      },
+      "stakingUrl": "https://wallet.keplr.app/#/agoric/stake?modal=stake&validator=agoricvaloper1ev9nl6pl5trgvrc7chntj937m42aznn28crcs8"
     }
   }
 }

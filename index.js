@@ -85,7 +85,7 @@ function fetchValidatorInfomation() {
     const chainData = config.get("chainData");
     for (const key in chainData) {
       let fetchInfo = async (chainData, key) => {
-        let { lcd, valoper, additionalInfo } = chainData[key]
+        let { lcd, valoper, additionalInfo, currency, stakingUrl } = chainData[key]
         let validatorUrl = `${lcd}/cosmos/staking/v1beta1/validators/${valoper}`
         let stakingParamUrl = `${lcd}/cosmos/staking/v1beta1/params`
         const validatorResponse = await axios.get(validatorUrl, {
@@ -103,6 +103,8 @@ function fetchValidatorInfomation() {
           let validatorInformation = {
             ...validatorResponse.data,
             "stakingParams": stakingParams.data,
+            currency,
+            stakingUrl,
             "additionInfo": additionalInfo
           }
 
