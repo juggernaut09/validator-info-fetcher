@@ -4,11 +4,16 @@ const Redis = require("ioredis");
 const cron = require("node-cron");
 const config = require("config");
 var cors = require('cors')
+var morgan = require('morgan')
+
+
 const app = express();
 const redis = new Redis();
 
-
-
+// Set the application enviorment 
+if(process.env.APP_ENV == null || process.env.APP_ENV == undefined){
+  process.env.APP_ENV = "dev"
+}
 
 // logs 
 function log(...args) {
@@ -19,8 +24,15 @@ function logError(...args) {
   console.log(`Err : ${new Date()} > ${args.join(" ")}`)
 }
 
+// logs for requests 
+app.use(morgan('combined'))
+
 // adding cors to express 
-var allowlist = ['https://*.vitwit.com']
+var allowlist = [
+  'https://*.vitwit.com',
+  'https://api.staking.vitwit.com',
+  'https://api.staking.vitwit.com:3001'
+]
 
 const corsOptions = {
   methods: ['GET'],
@@ -40,29 +52,29 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 app.get("/", (req, res, next) => {
-  res.send("Hello From witval validator (https://staking.vitwit.com)");
+  res.send("Hello From witval validator (https://api.staking.vitwit.com)");
 });
 
 app.get("/validator/:chain", (req, res, next) => {
   try {
     const chain = req.params.chain;
     if (chain == undefined) {
-      res.status(500).send({ error: "Make sure to send valid chain" });
+      return res.status(500).send({ error: "Make sure to send valid chain" });
     }
     let chainData = config.get("chainData")
     let chainKeys = Object.keys(chainData)
     if (chainKeys.indexOf(chain) == -1) {
-      res.status(500).send({ "error": "Make sure to send valid chain", "chains": chainKeys });
+      return res.status(500).send({ "error": "Make sure to send valid chain", "chains": chainKeys });
     }
     redis.get(`${chain}`, (err, response) => {
       if (err) {
-        res.status(500).send({ error: err.message });
+        return res.status(500).send({ error: err.message });
       } else {
-        res.status(200).send({ message: JSON.parse(response) });
+        return res.status(200).send({ message: JSON.parse(response) });
       }
     });
   } catch (err) {
-    res.status(500).send({ error: err.message });
+    return res.status(500).send({ error: err.message });
   }
 });
 
@@ -108,6 +120,7 @@ cron.schedule(config.get("cronExpression"), () => {
 
 const port = config.get("port");
 app.listen(port, () => {
+  log(`application APP_ENV : ${process.env.APP_ENV}`)
   log(`validator - info - fetcher listening on port ${port}`);
   log(`fetching the validator informations`)
   fetchValidatorInfomation()
